@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0214)https://jupyterhubonline.thebridge.tech/hub/login?next=%2Fhub%2Fuser%2Flab%2Ftree%2FSprint_05_Acceso_local_y_Tratamiento_de_Datos%2FUnidad_02_Acceso_y_Procesado_de_Datos_Internos__Ficheros%2F06_Ficheros_xml_I.ipynb -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>JupyterHub</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link rel="stylesheet" href="./style.min.css" type="text/css">
+    
+    
+    <link rel="icon" href="https://jupyterhubonline.thebridge.tech/hub/static/favicon.ico?v=fde5757cd3892b979919d3b1faa88a410f28829feb5ba22b6cf069f2c6c98675fceef90f932e49b510e74d65c681d5846b943e7f7cc1b41867422f0481085c1f" type="image/x-icon">
+    
+    
+    <script src="./require.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script>
+      require.config({
+          
+          urlArgs: "v=20241119000016",
+          
+          baseUrl: '/hub/static/js',
+          paths: {
+            components: '../components',
+            jquery: '../components/jquery/dist/jquery.min',
+            bootstrap: '../components/bootstrap/dist/js/bootstrap.min',
+            moment: "../components/moment/moment",
+          },
+          shim: {
+            bootstrap: {
+              deps: ["jquery"],
+              exports: "bootstrap"
+            },
+          }
+      });
+    </script>
+
+    <script type="text/javascript">
+      window.jhdata = {
+        base_url: "/hub/",
+        prefix: "/",
+        
+        
+        admin_access: false,
+        
+        
+        options_form: false,
+        
+        xsrf_token: "2|29f83335|c8b4b4fe15379b8a16f1441d91a508b7|1730465940",
+      }
+    </script>
+
+    
+    
+
+</head>
+
+<body>
+
+<noscript>
+  <div id='noscript'>
+    JupyterHub requires JavaScript.<br>
+    Please enable it to proceed.
+  </div>
+</noscript>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        
+        <span id="jupyterhub-logo" class="pull-left">
+            <a href="https://jupyterhubonline.thebridge.tech/hub/"><img src="./logo" alt="JupyterHub logo" class="jpy-logo" title="Home"></a>
+        </span>
+        
+        
+      </div>
+
+      <div class="collapse navbar-collapse" id="thenavbar">
+        
+        <ul class="nav navbar-nav navbar-right">
+          
+            <li>
+              
+
+            </li>
+          
+        </ul>
+      </div>
+
+      
+      
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+<div id="login-main" class="container">
+
+
+<form action="https://jupyterhubonline.thebridge.tech/hub/login?next=%2Fhub%2Fuser%2Flab%2Ftree%2FSprint_05_Acceso_local_y_Tratamiento_de_Datos%2FUnidad_02_Acceso_y_Procesado_de_Datos_Internos__Ficheros%2F06_Ficheros_xml_I.ipynb" method="post" role="form">
+  <div class="auth-form-header">
+    <h1>Sign in</h1>
+  </div>
+  <div class="auth-form-body">
+
+    <p id="insecure-login-warning" class="hidden">
+    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
+    We strongly recommend enabling HTTPS for JupyterHub.
+    </p>
+
+    
+    <input type="hidden" name="_xsrf" value="2|29f83335|c8b4b4fe15379b8a16f1441d91a508b7|1730465940">
+    <label for="username_input">Username:</label>
+    <input id="username_input" type="text" autocapitalize="off" autocorrect="off" autocomplete="username" class="form-control" name="username" val="" tabindex="1" autofocus="autofocus">
+    <label for="password_input">Password:</label>
+    <input type="password" class="form-control" autocomplete="current-password" name="password" id="password_input" tabindex="2">
+
+    <div class="feedback-container">
+      <input id="login_submit" type="submit" class="btn btn-jupyter form-control" value="Sign in" tabindex="3">
+      <div class="feedback-widget hidden">
+        <i class="fa fa-spinner"></i>
+      </div>
+    </div>
+
+    
+    
+    
+
+  </div>
+</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="error-dialog" tabindex="-1" role="dialog" aria-labelledby="error-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h1 class="modal-title" id="error-label">Error</h1>
+      </div>
+      <div class="modal-body">
+        
+  <div class="ajax-error">
+    The error
+  </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+if (window.location.protocol === "http:") {
+  // unhide http warning
+  var warning = document.getElementById('insecure-login-warning');
+  warning.className = warning.className.replace(/\bhidden\b/, '');
+}
+// setup onSubmit feedback
+$('form').submit((e) => {
+  var form = $(e.target);
+  form.find('.feedback-container>input').attr('disabled', true);
+  form.find('.feedback-container>*').toggleClass('hidden');
+  form.find('.feedback-widget>*').toggleClass('fa-pulse');
+});
+</script>
+
+
+
+
+</body></html>
